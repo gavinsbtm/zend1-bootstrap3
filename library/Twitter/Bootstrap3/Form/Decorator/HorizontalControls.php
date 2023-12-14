@@ -49,7 +49,7 @@ class Twitter_Bootstrap3_Form_Decorator_HorizontalControls extends Zend_Form_Dec
         $dimensionControls = $this->getDimension();
         if (!empty($dimensionControls)) {
             foreach (explode(',', $dimensionControls) as $size) {
-                $class .= ' col-' . trim($size);
+                $class .= ' col-' . trim($size ?? '');
             }
         }
         
@@ -57,7 +57,7 @@ class Twitter_Bootstrap3_Form_Decorator_HorizontalControls extends Zend_Form_Dec
             $dimensionLabel = $this->getDimensionLabel();
             if (!empty($dimensionLabel)) {
                 foreach (explode(',', $dimensionLabel) as $size) {
-                    $class .= ' col-' . trim(preg_replace('/(-)([0-9]+)/', '-offset-$2', $size));
+                    $class .= ' col-' . trim(preg_replace('/(-)([0-9]+)/', '-offset-$2', $size) ?? '');
                 }
             }
         }
@@ -66,7 +66,7 @@ class Twitter_Bootstrap3_Form_Decorator_HorizontalControls extends Zend_Form_Dec
             $class .= ' form-control-static';
         }
         
-        $class = trim($class);
+        $class = trim($class ?? '');
         if (!empty($class)) {
             $this->setOption('class', $class);
         }

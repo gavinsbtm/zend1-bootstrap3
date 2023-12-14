@@ -38,7 +38,7 @@ class Twitter_Bootstrap3_Form_Decorator_HorizontalLabel extends Zend_Form_Decora
         $dimensionLabel = $this->getDimension();
         if (!empty($dimensionLabel)) {
             foreach (explode(',', $dimensionLabel) as $size) {
-                $class .= ' col-' . trim($size);
+                $class .= ' col-' . trim($size ?? '');
             }
         }
         

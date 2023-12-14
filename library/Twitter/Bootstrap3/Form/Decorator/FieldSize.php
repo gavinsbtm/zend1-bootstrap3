@@ -39,14 +39,14 @@ class Twitter_Bootstrap3_Form_Decorator_FieldSize extends Zend_Form_Decorator_Ht
         if (!empty($dimension)) {
             if (is_string($dimension)) {
                 foreach (explode(',', $dimension) as $size) {
-                    $class .= ' col-' . trim($size);
+                    $class .= ' col-' . trim($size ?? '');
                 }
             }
 
             $element->setAttrib('dimension', null);
         }
 
-        $class = trim($class);
+        $class = trim($class ?? '');
         if (!empty($class)) {
             $this->setOption('class', $class);
         } else {

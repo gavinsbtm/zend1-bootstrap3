@@ -19,5 +19,8 @@
         "twitter",
         "bootstrap",
         "twitter bootstrap"
-    ]
+    ],
+    "require-dev": {
+        "rector/rector": "^0.18.12"
+    }
 }
